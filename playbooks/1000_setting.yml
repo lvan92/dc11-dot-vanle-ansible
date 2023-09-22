@@ -9,7 +9,7 @@
     tasks:
       - name: 0. Get root user
         shell: |
-          echo "root:123456789" | sudo chpasswd
+          echo "root:12345678xX" | sudo chpasswd
 
       - name: 1. Update OS
         command: apt update
