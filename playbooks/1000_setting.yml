@@ -1,4 +1,4 @@
-  host: ap-s1
+  hosts: ap-s1
   become: yes
   become_method: sudo
   vars_files:
