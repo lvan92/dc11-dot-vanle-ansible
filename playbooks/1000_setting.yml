@@ -14,10 +14,7 @@
         command: update-ca-certificates
 
       - name: 3. Install ca cerfiticates
-        apt:
-          name: ca-cerfiticates
-          state: present
-          force_apt_get: yes
+        apt: name= ca-cerfiticates state= present force_apt_get= yes
 
       - name: 4. Install software properties common
         apt:
