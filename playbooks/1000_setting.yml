@@ -7,22 +7,26 @@
     vars:
       ansible_ssh_private_key_file: "{{ private_key }}"
     tasks:
-      - name: Update OS
+      - name: 1. Update OS
         command: apt update
 
-      - name: Install ca cerfiticates
+      - name: 2. Update package repository
+        command: apt-get update -y
+
+
+      - name: 3. Install ca cerfiticates
         apt:
           name: ca-cerfiticates
           state: present
           force_apt_get: yes
 
-      - name: Install software properties common
+      - name: 4. Install software properties common
         apt:
           name: software-properties-common
           state: present
           force_apt_get: yes
 
-      - name: Add the intermediate certificate to certificate bundle
+      - name: 5. Add the intermediate certificate to certificate bundle
         command: update-ca-certificates
 
       - name: 6. Install aptitude using apt
