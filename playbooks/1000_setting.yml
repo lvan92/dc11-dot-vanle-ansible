@@ -26,7 +26,10 @@
         command: update-ca-certificates
 
       - name: 5. Install ca cerfiticates
-        apt: name=ca-cerfiticates state=latest update_cache=yes force_apt_get=yes
+        apt:
+          name: ca-cerfiticates
+          state: latest
+          update_cache: yes
 
       - name: 5. Install software properties common
         apt:
