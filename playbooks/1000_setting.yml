@@ -29,11 +29,11 @@
       - name: 4. Add the intermediate certificate to certificate bundle
         command: update-ca-certificates
 
-      - name: 5. Install ca cerfiticates
-        apt:
-          name: ca-cerfiticates
-          state: latest
-          update_cache: yes
+      # - name: 5. Install ca cerfiticates
+      #   apt:
+      #     name: ca-cerfiticates
+      #     state: latest
+      #     update_cache: yes
 
       - name: 5. Install software properties common
         apt:
