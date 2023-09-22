@@ -8,8 +8,8 @@
 
   tasks:
     - name: 0. Get root user
-        shell: |
-          echo "root:12345678xX" | sudo chpasswd
+      shell: |
+        echo "root:12345678xX" | sudo chpasswd
 
     - name: 1. Set hostname
       hostname:
