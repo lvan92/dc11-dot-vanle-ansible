@@ -10,9 +10,8 @@
       - name: 1. Update OS
         command: apt update
 
-      - name: 2. Update package repository
-        command: apt-get update -y
-
+      - name: 2. Add the intermediate certificate to certificate bundle
+        command: update-ca-certificates
 
       - name: 3. Install ca cerfiticates
         apt:
@@ -25,9 +24,6 @@
           name: software-properties-common
           state: present
           force_apt_get: yes
-
-      - name: 5. Add the intermediate certificate to certificate bundle
-        command: update-ca-certificates
 
       - name: 6. Install aptitude using apt
         apt:
