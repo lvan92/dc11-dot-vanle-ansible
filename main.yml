@@ -1,1 +1,2 @@
 - import_playbook: playbooks/1000_setting.yml
+- import_playbook: playbooks/2000_install_jenkins.yml
