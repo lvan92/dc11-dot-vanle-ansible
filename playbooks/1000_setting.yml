@@ -1,0 +1,36 @@
+- name: Update sever
+  host: ap-s1
+  become: yes
+  become_method: sudo
+  vars_files:
+    - host_vars/ap-s1.yml
+  tasks:
+    - name: Update OS
+      command: apt update
+
+    - name: Install ca cerfiticates
+      apt:
+        name: ca-cerfiticates
+        state: present
+        force_apt_get: yes
+
+    - name: Install software properties common
+      apt:
+        name: software-properties-common
+        state: present
+        force_apt_get: yes
+
+    - name: Add the intermediate certificate to certificate bundle
+      command: update-ca-certificates
+
+    - name: 6. Install aptitude using apt
+      apt:
+        name: aptitude
+        state: present
+        force_apt_get: yes
+
+    - name: 7. Install common required system packages
+      apt:
+        name: "{{ common_required_packages }}"
+        state: present
+        force_apt_get: yes
