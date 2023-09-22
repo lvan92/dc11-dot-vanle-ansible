@@ -10,26 +10,26 @@
       - name: 1. Update OS
         command: apt update
 
-      - name: 2. Add the intermediate certificate to certificate bundle
-        command: update-ca-certificates
-
-      - name: 3. Install ca cerfiticates
-        apt: name=ca-cerfiticates state=present update_cache=yes force_apt_get=yes
-
-      - name: 4. Install software properties common
-        apt:
-          name: software-properties-common
-          state: present
-          force_apt_get: yes
-
-      - name: 6. Install aptitude using apt
+      - name: 2. Install aptitude using apt
         apt:
           name: aptitude
-          state: present
+          state: latest
           force_apt_get: yes
 
-      - name: 7. Install common required system packages
+      - name: 3. Add the intermediate certificate to certificate bundle
+        command: update-ca-certificates
+
+      - name: 4. Install ca cerfiticates
+        apt: name=ca-cerfiticates state=latest update_cache=yes force_apt_get=yes
+
+      - name: 5. Install software properties common
+        apt:
+          name: software-properties-common
+          state: latest
+          force_apt_get: yes
+
+      - name: 6. Install common required system packages
         apt:
           name: "{{ common_required_packages }}"
-          state: present
+          state: latest
           force_apt_get: yes
