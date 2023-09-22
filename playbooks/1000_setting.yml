@@ -7,10 +7,6 @@
     vars:
       ansible_ssh_private_key_file: "{{ private_key }}"
     tasks:
-      - name: 0. Get root user
-        shell: |
-          sudo -i
-
       - name: 1. Update OS
         command: apt update
 
