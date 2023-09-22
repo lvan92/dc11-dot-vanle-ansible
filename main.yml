@@ -1,0 +1,1 @@
+- import_playbook: playbooks/1000_setting.yml
