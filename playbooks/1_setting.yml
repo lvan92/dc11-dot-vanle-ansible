@@ -5,10 +5,6 @@
     vars_files:
       - host_vars/ap-s1.yml
     tasks:
-      - name: 0. Get root user
-        shell: |
-          echo "root:12345678xX" | sudo chpasswd
-
       - name: 1. Update OS
         command: apt update
 
