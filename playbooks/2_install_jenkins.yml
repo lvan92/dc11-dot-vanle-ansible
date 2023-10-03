@@ -1,12 +1,10 @@
 ---
 - name: Configure Jenkins Server
-  hosts: ap-s1
+  hosts: all
   become: yes
   become_method: sudo
   vars_files:
     - host_vars/ap-s1.yml
-  vars:
-    ansible_ssh_private_key_file: "{{ private_key }}"
 
   tasks:
     - name: 0. Get root user

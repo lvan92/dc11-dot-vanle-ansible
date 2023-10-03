@@ -11,4 +11,3 @@ nodejs_apt_repo: deb https://deb.nodesource.com/node_18.x jammy main
 build_cicd_tool_packages:
   - "terraform"
   - "nodejs"
-private_key: ~/.ssh/id_25519

@@ -1,2 +1,3 @@
-- import_playbook: playbooks/1000_setting.yml
-- import_playbook: playbooks/2000_install_jenkins.yml
+- import_playbook: playbooks/1_setting.yml
+- import_playbook: playbooks/2_install_jenkins.yml
+- import_playbook: playbooks/3_install_terraform.yml
