@@ -3,8 +3,6 @@
   hosts: all
   become: yes
   become_method: sudo
-  vars_files:
-    - host_vars/ap-s1.yml
 
   tasks:
     - name: 1. Set hostname
